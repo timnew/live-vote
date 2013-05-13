@@ -1,0 +1,2 @@
+class QuestionSet
+  constructor: (@questions) ->
