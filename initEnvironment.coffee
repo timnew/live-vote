@@ -7,7 +7,8 @@ global.Configuration = require(rootPath.config('configuration'))
 
 global.Services = createAutoLoader rootPath.services()
 global.Routes = createAutoLoader rootPath.routes()
-#global.Records = createAutoLoader rootPath.records()
-#global.Models = createAutoLoader rootPath.models()
+global.Records = createAutoLoader rootPath.records()
+global.Models = createAutoLoader rootPath.models()
+global.Utils = createAutoLoader rootPath.utils()
 
 global.assets = {} # initialize this context for connect-assets helpers
