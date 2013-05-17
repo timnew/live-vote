@@ -1,0 +1,25 @@
+extend ../page
+
+block page-content
+  .container(data-widget="QuestionAnswerPage")
+    .row
+      .span12
+        h1
+          = question.text
+
+    .row
+      .span12
+        ul.thumbnails
+          each option in question.options
+            li.span4
+              .thumbnail
+                a(data-value=option.value)
+                  i.icon-ok
+                  h3
+                    = option.text
+
+
+block append body-scripts
+  script(src="http://d3js.org/d3.v3.min.js", charset="utf-8")
+  != assets.js("pages/QuestionAnswerPage")
+

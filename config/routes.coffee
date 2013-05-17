@@ -1,11 +1,11 @@
 exports = module.exports = (app) ->
   app.get '/', Routes.home.index
 
-  app.get '/vote/:id', Routes.vote.summary
-  app.get '/vote/:id/form', Routes.vote.form
+  app.get '/question/:questionId', Routes.question.question
+  app.get '/question/:questionId/answer', Routes.question.answer.view
 
-  app.post '/api/:id/', Routes.api.vote
-  app.get '/api/:id/', Routes.api.stream
+  app.post '/question/:questionId/answer', Routes.question.answer
+  app.get '/question/:questionId/status-stream', Routes.question.statusStream
 
 
 

@@ -66,6 +66,9 @@ EventSource.unregister = (id) ->
 
 getId = (type, name) ->
   type = type.constructor.name if typeof(type) is 'object'
+  type = type.name if typeof(type) is 'function'
+
+  return type unless name?
 
   "#{type}:#{name}"
 

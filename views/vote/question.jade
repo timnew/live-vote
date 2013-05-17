@@ -1,0 +1,16 @@
+extend ../page
+
+block page-content
+  .container
+    .row
+      .span12
+        h1
+          = question.text
+    .row
+      .offset3.span6
+        #chart(data-widget="SummaryChart", data-question-id=question.id, data-event-stream=eventStreamUrl, data-initial-data=initialData)
+
+block append body-scripts
+  script(src="http://d3js.org/d3.v3.min.js", charset="utf-8")
+  != assets.js("pages/QuestionPage")
+
